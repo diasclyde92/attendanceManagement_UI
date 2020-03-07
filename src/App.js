@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import LoginPage from "./Pages/LoginPage";
 import "./App.css";
-import PortalPage from "./Components/PortalPage";
+import PortalPage from "./Pages/PortalPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
