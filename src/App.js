@@ -5,6 +5,7 @@ import LoginPage from "./Pages/LoginPage";
 import "./App.css";
 import PortalPage from "./Pages/PortalPage";
 import MyAttendancePage from "./Pages/MyAttendancePage"
+import PunchPage from './Pages/Punch';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
           <Route path="/" exact component={LoginPage} />
           <Route path="/Portal" component={PortalPage} />
           <Route path="/AttendancePage" component={MyAttendancePage} />
+          <Route path="/Punch" component={PunchPage} />
         </Router>
       </div>
     );
