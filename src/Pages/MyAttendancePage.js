@@ -5,11 +5,11 @@ export default class MyAttendancePage extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header  history={this.props.history}/>
         <div className="container h-100">
           <div className="row h-100" style={{ marginTop: "1em" }}>
             <div className="col col-md-6">
-              <table class="table table-bordered">
+              <table className="table table-bordered">
                 <thead>
                   <tr>
                     <th scope="col">#</th>

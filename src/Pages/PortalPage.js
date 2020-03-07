@@ -5,7 +5,7 @@ export default class PortalPage extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header history={this.props.history}/>
         <div className="container h-100">
           <div className="row h-100 justify-content-center align-items-center">
             <div className="col col-md-12">

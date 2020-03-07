@@ -2,6 +2,11 @@ import React from "react";
 import { Nav, NavItem, NavLink } from "shards-react";
 
 export default class Header extends React.Component {
+
+  onNavClick = pageName => {
+    this.props.history.push("/AttendancePage");
+  };
+
   render() {
     return (
       <div className="container-fluid">
@@ -9,7 +14,7 @@ export default class Header extends React.Component {
           <div className="col col-md-12">
             <Nav>
               <NavItem>
-                <NavLink active href="#">
+                <NavLink onClick={this.onNavClick}>
                   My Attendance History
                 </NavLink>
               </NavItem>
