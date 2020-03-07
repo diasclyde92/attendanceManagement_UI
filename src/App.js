@@ -6,6 +6,7 @@ import "./App.css";
 import PortalPage from "./Pages/PortalPage";
 import MyAttendancePage from "./Pages/MyAttendancePage"
 import PunchPage from './Pages/Punch';
+import ManageEmployePage from './Pages/ManageEmployePage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route path="/Portal" component={PortalPage} />
           <Route path="/AttendancePage" component={MyAttendancePage} />
           <Route path="/Punch" component={PunchPage} />
+          <Route path="/ManageEmployes" component={ManageEmployePage} />
         </Router>
       </div>
     );
