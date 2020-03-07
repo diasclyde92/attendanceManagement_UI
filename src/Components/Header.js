@@ -18,7 +18,7 @@ export default class Header extends React.Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#" onClick={() => this.onNavClick("/")}>Log Out</NavLink>
+                <NavLink href="#" onClick={() => this.onNavClick("/Login")}>Log Out</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="#">Another Link</NavLink>

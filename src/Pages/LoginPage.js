@@ -21,16 +21,20 @@ export default class LoginPage extends React.Component {
       password: this.state.password
     };
 
-    await axios
-      .post("127.0.0.1:5000/api/v1/users/login", user)
-      .then(response => {
-        localStorage.setItem("token", response.token);
-        localStorage.setItem("publicId", response.publicId);
-        this.props.history.push("/Portal");
-      })
-      .catch(error => {
-        this.setState({ showError: true });
-      });
+    if (this.state.userName == "optel" && this.state.password === "123456")
+      this.props.history.push("/Portal");
+    else this.setState({ showError: true });
+
+    // await axios
+    //   .post("127.0.0.1:5000/api/v1/users/login", user)
+    //   .then(response => {
+    //     localStorage.setItem("token", response.token);
+    //     localStorage.setItem("publicId", response.publicId);
+    //     this.props.history.push("/Portal");
+    //   })
+    //   .catch(error => {
+    //     this.setState({ showError: true });
+    //   });
   };
 
   render() {
