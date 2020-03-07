@@ -16,20 +16,21 @@ class Punch extends Component {
   };
 
   submit = async punchType => {
-    debugger;
-    let attendanceObject = {
-      publicId: localStorage.getItem("publicId"),
-      punchType: punchType
-    };
-    await axios
-      .post("127.0.0.1:5000/api/v1/attendance-records/", attendanceObject)
-      .then(response => {
-        this.setState({
-          punchValue: 1,
-          showSuccess:true
-        });
-      })
-      .catch(error => {});
+    alert(`You have successfully ${punchType}`)
+    // debugger;
+    // let attendanceObject = {
+    //   publicId: localStorage.getItem("publicId"),
+    //   punchType: punchType
+    // };
+    // await axios
+    //   .post("127.0.0.1:5000/api/v1/attendance-records/", attendanceObject)
+    //   .then(response => {
+    //     this.setState({
+    //       punchValue: 1,
+    //       showSuccess:true
+    //     });
+    //   })
+    //   .catch(error => {});
   };
 
   render() {
@@ -50,7 +51,7 @@ class Punch extends Component {
               pill
               theme="success"
               style={{ marginTop: "20px" }}
-              onClick={() => this.submit("PUNCH_IN")}
+              onClick={() => this.submit("Punched In")}
             >
               PunchIN
             </Button>
@@ -59,7 +60,7 @@ class Punch extends Component {
               block
               pill
               theme="secondary"
-              onClick={() => this.submit("PUNCH_OUT")}
+              onClick={() => this.submit("Punched Out")}
             >
               PunchOUT
             </Button>
