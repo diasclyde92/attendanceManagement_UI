@@ -21,6 +21,7 @@ export default class Usercard extends React.Component {
                     <Button style={{ marginRight: '5px' }}>Edit</Button>
                     <Button>Delete</Button>
                     <Button style={{ marginTop: '5px' }}>View Attendance</Button>
+                    <CardFooter style={{ marginTop: '10px' }}>Status:{this.props.status}</CardFooter>
                 </CardBody>
             </Card>
         );
