@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FormInput, Button, Alert } from "shards-react";
 import axios from "axios";
+import Usercard from '../Components/Usercard';
 
 class Punch extends Component {
   state = {
