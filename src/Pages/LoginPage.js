@@ -26,6 +26,7 @@ export default class LoginPage extends React.Component {
       .then(response => {
         localStorage.setItem("token", response.token);
         localStorage.setItem("publicId", response.publicId);
+        this.props.history.push("/Portal");
       })
       .catch(error => {
         this.setState({ showError: true });
