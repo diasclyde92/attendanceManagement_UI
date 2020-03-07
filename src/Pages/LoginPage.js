@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Form, FormInput, FormGroup, Button, Alert } from "shards-react";
+import axios from "axios";
 
 export default class LoginPage extends React.Component {
   constructor(props) {
@@ -8,16 +9,27 @@ export default class LoginPage extends React.Component {
     this.state = {
       userName: "",
       password: "",
-      visible: false
+      showError: false
     };
   }
 
-  onFormSubmit = e => {
+  onFormSubmit = async e => {
     e.preventDefault();
 
-    console.log(this.state.userName);
-    console.log(this.state.password);
-    this.setState({ visible: true });
+    let user = {
+      username: this.state.userName,
+      password: this.state.password
+    };
+
+    await axios
+      .post("127.0.0.1:5000/api/v1/users/login", user)
+      .then(response => {
+        localStorage.setItem("token", response.token);
+        localStorage.setItem("publicId", response.publicId);
+      })
+      .catch(error => {
+        this.setState({ showError: true });
+      });
   };
 
   render() {
@@ -54,8 +66,8 @@ export default class LoginPage extends React.Component {
             <br />
             <Alert
               theme="danger"
-              dismissible={() => this.setState({ visible: false })}
-              open={this.state.visible}
+              dismissible={() => this.setState({ showError: false })}
+              open={this.state.showError}
             >
               User does not exist
             </Alert>
