@@ -4,6 +4,7 @@ import "shards-ui/dist/css/shards.min.css";
 import LoginPage from "./Pages/LoginPage";
 import "./App.css";
 import PortalPage from "./Pages/PortalPage";
+import MyAttendancePage from "./Pages/MyAttendancePage"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
         <Router>
           <Route path="/" exact component={LoginPage} />
           <Route path="/Portal" component={PortalPage} />
+          <Route path="/AttendancePage" component={MyAttendancePage} />
         </Router>
       </div>
     );
